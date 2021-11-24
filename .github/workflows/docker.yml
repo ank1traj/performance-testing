@@ -1,4 +1,4 @@
-name: spike.js
+name: docker
 
 on:
   schedule:
