@@ -17,7 +17,7 @@ jobs:
     - name: k6 install
       run: brew install k6
     - name: pull docker
-      run: docker pull honesthacker/datadog
+      run: docker pull honesthacker/datadog:latest
     - name: run script
       run: k6 run smoke.js
   
