@@ -18,6 +18,8 @@ jobs:
       image: node:14.15.0-alpine3.12
     steps:
       - uses: actions/checkout@master
+      - name: Docker compose
+        run: docker-compose up -d
       - name: install k6
         run: brew install k6
       - name: install docker agent
