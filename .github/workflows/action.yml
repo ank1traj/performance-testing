@@ -9,10 +9,6 @@ on:
         description: 'Person to greet'
         # Default value if no value is explicitly provided
         default: 'World'
-        # Input has to be provided for the workflow to run
-        required: true  push:
-    branches:
-    - master
 
 jobs:
   visual:
