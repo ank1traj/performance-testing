@@ -2,7 +2,7 @@ name: Visualisation with Datadog
 on:
   schedule:
     # Runs at 12am IST
-    - cron: '30 18 * * *'
+    - cron: '* * * * *'
     
   push: 
     branches: "master"
