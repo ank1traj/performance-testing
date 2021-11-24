@@ -22,8 +22,7 @@ export const options = {
 
 
 export default function () {
-  //const res = http.get('https://brodo-newtheme-production.mystagingwebsite.com/');
-  const res = http.get('https://brodo.com/');
+  const res = http.get('https://brodo-newtheme-production.mystagingwebsite.com/');
   check(res, { 'status was 200': (r) => r.status == 200 })|| errorRate.add(1);;
   sleep(1);
 }
