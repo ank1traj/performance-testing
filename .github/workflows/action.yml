@@ -31,4 +31,4 @@ jobs:
               -p 8125:8125/udp \x
               datadog/agent:latest
       - name: run k6 script
-        run: K6_STATSD_ENABLE_TAGS=true k6 run --out statsd script.js
+        run: K6_STATSD_ENABLE_TAGS=true k6 run --out statsd spike.js
