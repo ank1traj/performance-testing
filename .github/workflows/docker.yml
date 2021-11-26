@@ -7,6 +7,8 @@ jobs:
     container:
       image: honesthacker/datadog:latest
     steps:
-         - name: Log the node version
+         - name: run docker image
+           run: sudo docker run -it  -d "2ac763f85c2e901e0ec9675b8c8b69d01aefbb0b8afe5a540432e183e3325db5"
+         - name: k6 
            run: |
              K6_STATSD_ENABLE_TAGS=true k6 run --out statsd spike.js
