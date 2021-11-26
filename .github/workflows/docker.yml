@@ -9,5 +9,4 @@ jobs:
     steps:
          - name: Log the node version
            run: |
-             node -v
-             cat /etc/os-release  
+             K6_STATSD_ENABLE_TAGS=true k6 run --out statsd spike.js
