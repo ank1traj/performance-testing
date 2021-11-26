@@ -1,18 +1,13 @@
-name: docker
+name: container
+on: push
 
-on:
-# This command allows us to run the Action automatically from the Actions tab.
-  workflow_dispatch:
 jobs:
-  build:
-    # The type of runner that the job will run on
-    runs-on: macos-11
-    container: 
-      image: honesthacker/datadog:latest
+  node-docker:
+    runs-on: ubuntu-latest
+    container:
+      image: node:14.15.0-alpine3.12
     steps:
-       - name: install k6
-         run: brew install k6
-       - name: run k6 script
-         run: K6_STATSD_ENABLE_TAGS=true k6 run --out statsd spike.js
-
-    
+         - name: Log the node version
+           run: |
+             node -v
+             cat /etc/os-release  
