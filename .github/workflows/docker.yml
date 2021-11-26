@@ -10,15 +10,12 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: macos-11
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    container: 
+      image: honesthacker/datadog:latest
     steps:
-    - uses: actions/checkout@v2
-    - name: k6 install
-      run: brew install k6
-    - name: pull docker
-      run: |
-        docker pull honesthacker/datadog:latest
-    - name: run script
-      run: k6 run smoke.js
-  
+       - name: install k6
+         run: brew install k6
+       - name: run k6 script
+         run: K6_STATSD_ENABLE_TAGS=true k6 run --out statsd spike.js
+
+    
