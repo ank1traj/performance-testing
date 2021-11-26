@@ -17,5 +17,5 @@ jobs:
     - name: k6 install
       run: brew install k6
     - name: run script
-      run: k6 run spike.js
+      run: k6 run soap.js
   
