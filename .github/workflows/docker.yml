@@ -24,7 +24,7 @@ jobs:
                 -e DD_API_KEY=${{ secrets.DATADOG }} \
                 -e DD_DOGSTATSD_NON_LOCAL_TRAFFIC=1 \
                 -p 8125:8125/udp \
-                datadog/agent
+                datadog/agent:latest
          - name: k6 
            run: |
              K6_STATSD_ENABLE_TAGS=true k6 run --out statsd spike.js
