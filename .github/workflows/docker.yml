@@ -12,6 +12,8 @@ jobs:
             password: ${{ secrets.DOCKERHUB_TOKEN }}
          - name: install docker
            run: docker pull loadimpact/k6
+         - name: install datadog
+           run: docker pull datadog/agent:latest
          - name: run docker agent
            run: docker run -d \
                 --name datadog \
