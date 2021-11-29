@@ -22,7 +22,7 @@ export const options = {
 
 
 export default function () {
-  const res = http.get('https://main.cuchapter.tech/');
+  const res = http.get('https://github.com/ank1traj');
   check(res, { 'status was 200': (r) => r.status == 200 })|| errorRate.add(1);;
   sleep(1);
 }
